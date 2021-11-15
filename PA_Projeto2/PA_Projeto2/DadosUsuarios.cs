@@ -5,11 +5,11 @@ using System.Text;
 
 namespace PA_Projeto2
 {
-    class DadosCliente
+    class DadosUsuarios
     {
         List<Usuario> usuarios;
 
-        public DadosCliente()
+        public DadosUsuarios()
         {
             usuarios = new List<Usuario>();
         }

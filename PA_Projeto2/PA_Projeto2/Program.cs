@@ -8,7 +8,7 @@ namespace PA_Projeto2
     {
         static void Main(string[] args)
         {
-            DadosCliente bancoDados = new DadosCliente();
+            DadosUsuarios bancoDados = new DadosUsuarios();
             Console.WriteLine("Hello World!");
             Cliente cliente = new Cliente(1, 1, 1, "1", "1", "1", 1, "1");
             Cliente cliente2 = new Cliente(1, 1, 1, "2", "1", "1", 1, "1");

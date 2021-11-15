@@ -4,14 +4,14 @@ using System.Text;
 
 namespace PA_Projeto2.Objetos
 {
-    class Mecanico : Usuario
+    class Profissional : Usuario
     {
         string descricao;
 
-        public Mecanico(int idUsuario, int estrelas, int senha, string nomeUsuario, string tipoConta, string contaBancaria, string descricao) : 
+        public Profissional(int idUsuario, int estrelas, int senha, string nomeUsuario, string tipoConta, string contaBancaria, string descricao) : 
             base(idUsuario, estrelas, senha, nomeUsuario, tipoConta, contaBancaria)
         {
-            this.descricao = descricao;
+            this.descricao = descricao; 
         }
 
         public string Descricao { get => descricao; set => descricao = value; }
