@@ -7,10 +7,10 @@ namespace PA_Projeto2.Objetos
     class Cliente : Usuario
     {
 
-        int cartaoDeCredito;
+        string cartaoDeCredito;
         string endereco;
 
-        public Cliente(int idUsuario, int estrelas, int senha, string nomeUsuario, string tipoConta, string contaBancaria, int cartaoDeCredito, string endereco) :
+        public Cliente(int idUsuario, int estrelas, string senha, string nomeUsuario, int tipoConta, string contaBancaria, string cartaoDeCredito, string endereco) :
              base(idUsuario, estrelas, senha, nomeUsuario, tipoConta, contaBancaria)
         {
             this.cartaoDeCredito = cartaoDeCredito;
