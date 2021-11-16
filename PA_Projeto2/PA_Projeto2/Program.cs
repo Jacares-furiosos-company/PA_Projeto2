@@ -8,8 +8,7 @@ namespace PA_Projeto2
     {
         static void Main(string[] args)
         {
-
-            Login login = new Login();
+            FluxoLogin login = new FluxoLogin();
             login.PedirLogin();
 
         }

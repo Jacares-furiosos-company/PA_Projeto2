@@ -56,5 +56,12 @@ namespace PA_Projeto2.Helpers
             }
 
         }
+        public static int verificaTipo(IEnumerable<Usuario> dadosusuarios, string nomeUsuario)
+        {
+            var usuario = dadosusuarios.FirstOrDefault(x => x.NomeUsuario == nomeUsuario);
+
+            return usuario.TipoConta;
+        }
+
     }
 }
