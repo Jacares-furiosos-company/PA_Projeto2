@@ -62,7 +62,7 @@ namespace PA_Projeto2
                 string nomeUsuario = Console.ReadLine();
                 bool verificaUsuario = HelperManipulaDados.VerificaUsuario(dadosusuarios.Usuarios, nomeUsuario);
                 int id = HelperManipulaDados.VerificaID(dadosusuarios.Usuarios);
-                if (verificaUsuario)
+                if (!verificaUsuario)
                 {
                     Console.WriteLine("Escolha sua senha");
                     string senha = Console.ReadLine();

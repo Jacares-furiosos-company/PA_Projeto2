@@ -8,12 +8,9 @@ namespace PA_Projeto2
     {
         static void Main(string[] args)
         {
-<<<<<<< HEAD
-=======
-            DadosUsuarios bancoDados = new DadosUsuarios();
->>>>>>> 2179926e6af2344cd4310923dc248f1b74536e2e
-            Console.WriteLine("Hello World!");
 
+            Login login = new Login();
+            login.PedirLogin();
 
         }
     }

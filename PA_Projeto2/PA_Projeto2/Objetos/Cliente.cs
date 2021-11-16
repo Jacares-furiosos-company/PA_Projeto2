@@ -17,7 +17,7 @@ namespace PA_Projeto2.Objetos
             this.endereco = endereco;
         }
 
-        public int CartaoDeCredito { get => cartaoDeCredito; set => cartaoDeCredito = value; }
+        public string CartaoDeCredito { get => cartaoDeCredito; set => cartaoDeCredito = value; }
         public string Endereco { get => endereco; set => endereco = value; }
     }
 }

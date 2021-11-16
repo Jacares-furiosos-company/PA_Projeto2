@@ -54,6 +54,7 @@ namespace PA_Projeto2.Helpers
             {
                 return usuario.IdUsuario++;
             }
+
         }
     }
 }
