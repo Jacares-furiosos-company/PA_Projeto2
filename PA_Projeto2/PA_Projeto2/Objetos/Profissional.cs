@@ -6,14 +6,14 @@ namespace PA_Projeto2.Objetos
 {
     class Profissional : Usuario
     {
-        string tipoProfissional;
+        Dictionary<int, string> especialidades;
 
-        public Profissional(int idUsuario, int estrelas, string senha, string nomeUsuario, int tipoConta, string contaBancaria, string tipoProfissional) : 
+        public Profissional(int idUsuario, int estrelas, string senha, string nomeUsuario, int tipoConta, string contaBancaria, Dictionary<int, string> especialidades) : 
             base(idUsuario, estrelas, senha, nomeUsuario, tipoConta, contaBancaria)
         {
-            this.tipoProfissional = tipoProfissional; 
+            this.especialidades = especialidades; 
         }
 
-        public string Descricao { get => tipoProfissional; set => tipoProfissional = value; }
+        public Dictionary<int, string> Especialidades { get => especialidades; set => especialidades = value; }
     }
 }

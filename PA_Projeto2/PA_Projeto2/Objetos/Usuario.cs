@@ -31,3 +31,4 @@ namespace PA_Projeto2.Objetos
         public int Estrelas { get => estrelas; set => estrelas = value; }
     }
 }
+ 

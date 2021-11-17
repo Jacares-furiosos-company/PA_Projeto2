@@ -8,16 +8,13 @@ namespace PA_Projeto2.Helpers
 {
     class HelperManipulaDados
     {
-        /*
-        public static Usuario BuscaUsuario(int idCliente)
+        public static Usuario BuscaUsuario(string nomeUsuario)
         {
-            //var clienteLogado = 
-            //return clienteLogado;
+            return null;
         }
-        */
-        public static bool VerificaUsuario(IEnumerable<Usuario> dadosusuarios ,string usuario, string senha)
+        public static bool VerificaUsuario(IEnumerable<Usuario> dadosusuarios ,string nomeUsuario, string senha)
         {
-            var verificao = dadosusuarios.FirstOrDefault(x => x.NomeUsuario == usuario);
+            var verificao = dadosusuarios.FirstOrDefault(x => x.NomeUsuario == nomeUsuario);
             if(verificao != null)
             {
                 if(verificao.Senha == senha)
@@ -31,9 +28,9 @@ namespace PA_Projeto2.Helpers
             }
             return false;
         }
-        public static bool VerificaUsuario(IEnumerable<Usuario> dadosusuarios, string usuario)
+        public static bool VerificaUsuario(IEnumerable<Usuario> dadosusuarios, string nomeUsuario)
         {
-            var verificao = dadosusuarios.FirstOrDefault(x => x.NomeUsuario == usuario);
+            var verificao = dadosusuarios.FirstOrDefault(x => x.NomeUsuario == nomeUsuario);
             if (verificao != null)
             {
                 return true;           

@@ -17,7 +17,7 @@ namespace PA_Projeto2
         {
             usuarios.Add(usuario);
         }
-        public void RemoverUsuario(Usuario usuario)
+        public  void RemoverUsuario(Usuario usuario)
         {
             if(usuarios.Contains(usuario))
             {

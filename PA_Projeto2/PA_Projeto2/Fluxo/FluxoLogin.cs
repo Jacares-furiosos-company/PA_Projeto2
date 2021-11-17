@@ -8,7 +8,6 @@ namespace PA_Projeto2
 {
     class FluxoLogin
     {
-        DadosUsuarios dadosusuarios = new DadosUsuarios();
         public void PedirLogin()
         {
             Console.WriteLine("1:Fazer Login");
@@ -33,12 +32,12 @@ namespace PA_Projeto2
                 Console.WriteLine("Informe sua senha");
                 string senha = Console.ReadLine();
 
-                bool verificao = HelperManipulaDados.VerificaUsuario(dadosusuarios.Usuarios, usuario, senha);
+                bool verificao = HelperManipulaDados.VerificaUsuario(Program.dadosUsuarios.Usuarios, usuario, senha);
 
                 if (verificao)
                 {
                     Console.WriteLine("Login Realizado");
-                    int tipoConta = HelperManipulaDados.verificaTipo(dadosusuarios.Usuarios, usuario);                  
+                    int tipoConta = HelperManipulaDados.verificaTipo(Program.dadosUsuarios.Usuarios, usuario);                  
                     if (tipoConta == 1)
                     {
                         FluxoCliente.FluxoPrincipal();
@@ -67,10 +66,10 @@ namespace PA_Projeto2
         {      
             while(true)
             {
-                Console.WriteLine("Escolha seu usuário");
+                Console.WriteLine("Escolha seu nome de usuário");
                 string nomeUsuario = Console.ReadLine();
-                bool verificaUsuario = HelperManipulaDados.VerificaUsuario(dadosusuarios.Usuarios, nomeUsuario);
-                int id = HelperManipulaDados.VerificaID(dadosusuarios.Usuarios);
+                bool verificaUsuario = HelperManipulaDados.VerificaUsuario(Program.dadosUsuarios.Usuarios, nomeUsuario);
+                int id = HelperManipulaDados.VerificaID(Program.dadosUsuarios.Usuarios);
                 if (!verificaUsuario)
                 {
                     Console.WriteLine("Escolha sua senha");
@@ -92,15 +91,15 @@ namespace PA_Projeto2
                             string endereco = Console.ReadLine();
 
                             Cliente cliente = new Cliente(id, 5, senha, nomeUsuario, tipoConta, contaBancaria, cartaoCredito, endereco);
-                            dadosusuarios.AdicionarUsuario(cliente);
+                            Program.dadosUsuarios.AdicionarUsuario(cliente);
                         }
                         else if (tipoConta == 2)
                         {
                             Console.WriteLine("Que tipo de Profissional você é?");
-                            string tipoProfissao = Console.ReadLine();
+                            Dictionary<int, string> especialidades = EscolherEspecialidade();
 
-                            Profissional profissional = new Profissional(id, 5, senha, nomeUsuario, tipoConta, contaBancaria, tipoProfissao);
-                            dadosusuarios.AdicionarUsuario(profissional);
+                            Profissional profissional = new Profissional(id, 5, senha, nomeUsuario, tipoConta, contaBancaria, especialidades);
+                            Program.dadosUsuarios.AdicionarUsuario(profissional);
                         }
                         Console.WriteLine("Cadastro realizado");
                         Console.WriteLine("Indo para a tela de login");
@@ -113,6 +112,48 @@ namespace PA_Projeto2
                     Console.WriteLine("Nome de Usuário já registrado");
                 }
             }
+        }
+        public Dictionary<int, string> EscolherEspecialidade()
+        {
+            bool loop = true;
+            Dictionary<int ,string> especialidade = new Dictionary<int, string>();
+            while (loop == true)
+            {
+                Console.WriteLine("Aperte Qualquer Tecla para sair");
+                Console.WriteLine("Escolha Suas Especialidades");
+                Console.WriteLine("1:Mecânico");
+                Console.WriteLine("2:Encanador");
+                Console.WriteLine("3:Eletricista");
+                Console.WriteLine("4:Marceneiro");
+                Console.WriteLine("5:Pedreiro de acabamento");
+                int escolha = int.Parse(Console.ReadLine());
+                if (escolha == 1)
+                {
+                    especialidade.Add(1, "Mecânico");                     
+                }
+                else if (escolha == 2)
+                {
+                    especialidade.Add(2, "Encanador");
+                }
+                else if (escolha == 3)
+                {
+                    especialidade.Add(3, "Eletricista");
+                }
+                else if (escolha == 4)
+                {
+                    especialidade.Add(4, "Marceneiro");
+                }
+                else if (escolha == 5)
+                {
+                    especialidade.Add(5, "Pedreiro de acabamento");
+                }
+                else
+                {
+                    loop = false;
+                }
+            }
+            Console.WriteLine("Escolha De Suas Especialidades Finalizada");
+            return especialidade;
         }
     }
 }
