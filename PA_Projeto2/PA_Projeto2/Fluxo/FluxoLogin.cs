@@ -69,7 +69,7 @@ namespace PA_Projeto2
                 Console.WriteLine("Escolha seu nome de usuário");
                 string nomeUsuario = Console.ReadLine();
                 bool verificaUsuario = HelperManipulaDados.VerificaUsuario(Program.dadosUsuarios.Usuarios, nomeUsuario);
-                int id = HelperManipulaDados.VerificaID(Program.dadosUsuarios.Usuarios);
+                int id = HelperManipulaDados.IncrementarID(Program.dadosUsuarios.Usuarios);
                 if (!verificaUsuario)
                 {
                     Console.WriteLine("Escolha sua senha");
@@ -90,7 +90,7 @@ namespace PA_Projeto2
                             Console.WriteLine("Digite seu endereço");
                             string endereco = Console.ReadLine();
 
-                            Cliente cliente = new Cliente(id, 5, senha, nomeUsuario, tipoConta, contaBancaria, cartaoCredito, endereco);
+                            Cliente cliente = new Cliente(id, 5, 1,senha, nomeUsuario, tipoConta, contaBancaria, cartaoCredito, endereco);
                             Program.dadosUsuarios.AdicionarUsuario(cliente);
                         }
                         else if (tipoConta == 2)
@@ -98,7 +98,7 @@ namespace PA_Projeto2
                             Console.WriteLine("Que tipo de Profissional você é?");
                             Dictionary<int, string> especialidades = EscolherEspecialidade();
 
-                            Profissional profissional = new Profissional(id, 5, senha, nomeUsuario, tipoConta, contaBancaria, especialidades);
+                            Profissional profissional = new Profissional(id, 5, 1, senha, nomeUsuario, tipoConta, contaBancaria, especialidades);
                             Program.dadosUsuarios.AdicionarUsuario(profissional);
                         }
                         Console.WriteLine("Cadastro realizado");

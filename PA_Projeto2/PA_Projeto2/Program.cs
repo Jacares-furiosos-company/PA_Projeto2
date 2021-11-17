@@ -11,11 +11,12 @@ namespace PA_Projeto2
         static void Main(string[] args)
         {
             Dictionary<int, string> especialidade = new Dictionary<int, string>();
-            especialidade.Add(6, "teste");
-            Cliente cliente = new Cliente(1, 5, "teste", "teste", 1, "teste", "teste", "teste");
-            Profissional profissional = new Profissional(1, 5, "teste1", "teste1", 2, "", especialidade);
-            Profissional profissional2 = new Profissional(2, 5, "teste2", "teste1", 2, "", especialidade);
-            Profissional profissional3 = new Profissional(3, 5, "teste3", "teste1", 2, "", especialidade);
+            especialidade.Add(4, "Marceneiro");
+            especialidade.Add(1, "Mecânico");
+            Cliente cliente = new Cliente(1, 5, 1, "teste", "teste", 1, "teste", "teste", "teste");
+            Profissional profissional = new Profissional(1, 5, 1,"teste1", "teste1", 2, "", especialidade);
+            Profissional profissional2 = new Profissional(2, 5, 1,"teste2", "teste1", 2, "", especialidade);
+            Profissional profissional3 = new Profissional(3, 5, 1,"teste3", "teste1", 2, "", especialidade);
             dadosUsuarios.AdicionarUsuario(profissional);
             dadosUsuarios.AdicionarUsuario(profissional2);
             dadosUsuarios.AdicionarUsuario(profissional3);

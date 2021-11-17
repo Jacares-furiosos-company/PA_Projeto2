@@ -12,8 +12,9 @@ namespace PA_Projeto2.Objetos
         int tipoConta;
         string contaBancaria;
         int estrelas;
+        int vezesAvaliado;
  
-        public Usuario(int idUsuario, int estrelas, string senha, string nomeUsuario, int tipoConta, string contaBancaria)
+        public Usuario(int idUsuario, int estrelas, int vezesAvaliado, string senha, string nomeUsuario, int tipoConta, string contaBancaria)
         {
             this.idUsuario = idUsuario;
             this.nomeUsuario = nomeUsuario;
@@ -21,6 +22,7 @@ namespace PA_Projeto2.Objetos
             this.tipoConta = tipoConta;
             this.contaBancaria = contaBancaria;
             this.estrelas = estrelas;
+            this.vezesAvaliado = vezesAvaliado;
         }
 
         public int IdUsuario { get => idUsuario; set => idUsuario = value; }
@@ -29,6 +31,7 @@ namespace PA_Projeto2.Objetos
         public int TipoConta { get => tipoConta; set => tipoConta = value; }
         public string ContaBancaria { get => contaBancaria; set => contaBancaria = value; }
         public int Estrelas { get => estrelas; set => estrelas = value; }
+        public int VezesAvaliado { get => vezesAvaliado; set => vezesAvaliado = value; }
     }
 }
  

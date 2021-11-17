@@ -8,8 +8,9 @@ namespace PA_Projeto2.Objetos
     {
         Dictionary<int, string> especialidades;
 
-        public Profissional(int idUsuario, int estrelas, string senha, string nomeUsuario, int tipoConta, string contaBancaria, Dictionary<int, string> especialidades) : 
-            base(idUsuario, estrelas, senha, nomeUsuario, tipoConta, contaBancaria)
+
+        public Profissional(int idUsuario, int vezesAvaliado, int estrelas, string senha, string nomeUsuario, int tipoConta, string contaBancaria, Dictionary<int, string> especialidades) : 
+            base(idUsuario, estrelas,vezesAvaliado ,senha, nomeUsuario, tipoConta, contaBancaria)
         {
             this.especialidades = especialidades; 
         }

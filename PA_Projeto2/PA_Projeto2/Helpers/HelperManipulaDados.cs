@@ -40,7 +40,7 @@ namespace PA_Projeto2.Helpers
                 return false;
             }
         }
-        public static int VerificaID(IEnumerable<Usuario> dadosusuarios)
+        public static int IncrementarID(IEnumerable<Usuario> dadosusuarios)
         {
             var usuario = dadosusuarios.OrderByDescending(x => x.IdUsuario).FirstOrDefault();
             if (usuario == null)
