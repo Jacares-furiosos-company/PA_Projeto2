@@ -85,8 +85,16 @@ namespace PA_Projeto2
 
                         if (tipoConta == 1)
                         {
-                            Console.WriteLine("Digite seu cartão");
-                            string cartaoCredito = Console.ReadLine();
+                            Console.WriteLine("Digite o numero do seu cartão");
+                            string numeroCartao = Console.ReadLine();
+
+                            Console.WriteLine("Digite seu cvv");
+                            int cvv = int.Parse(Console.ReadLine());
+
+                            Console.WriteLine("Digite a data de validade do cartão");
+                            int dataValidade = int.Parse(Console.ReadLine());
+                            Cartao cartaoCredito = new Cartao(numeroCartao, cvv, dataValidade);
+
                             Console.WriteLine("Digite seu endereço");
                             string endereco = Console.ReadLine();
 

@@ -22,7 +22,15 @@ namespace PA_Projeto2
 
         private static void procurarServicos()
         {
-            
+            Console.WriteLine("Serviços Disponiveis");
+            foreach(var item in Program.dadosUsuarios.Usuarios)
+            {
+                if(item.TipoConta == 1)
+                {
+                    Console.WriteLine($"Nome do usuário: {item.NomeUsuario}" );
+                    Console.WriteLine($"Estrelas: {item.Estrelas}");
+                }
+            }
         }
 
 
