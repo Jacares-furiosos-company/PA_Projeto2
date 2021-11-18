@@ -44,7 +44,7 @@ namespace PA_Projeto2
                     }
                     else if (tipoConta == 2)
                     {
-                        FluxoProfissional.FluxoPrincipal();
+                        FluxoProfissional.FluxoPrincipal(usuario);
                     }
                 }
                 else
@@ -96,7 +96,7 @@ namespace PA_Projeto2
                         else if (tipoConta == 2)
                         {
                             Console.WriteLine("Que tipo de Profissional você é?");
-                            Dictionary<int, string> especialidades = EscolherEspecialidade();
+                            Dictionary<int, string> especialidades = HelperManipulaProfissional.EscolherEspecialidade();
 
                             Profissional profissional = new Profissional(id, 5, 1, senha, nomeUsuario, tipoConta, contaBancaria, especialidades);
                             Program.dadosUsuarios.AdicionarUsuario(profissional);
@@ -112,48 +112,6 @@ namespace PA_Projeto2
                     Console.WriteLine("Nome de Usuário já registrado");
                 }
             }
-        }
-        public Dictionary<int, string> EscolherEspecialidade()
-        {
-            bool loop = true;
-            Dictionary<int ,string> especialidade = new Dictionary<int, string>();
-            while (loop == true)
-            {
-                Console.WriteLine("Aperte Qualquer Tecla para sair");
-                Console.WriteLine("Escolha Suas Especialidades");
-                Console.WriteLine("1:Mecânico");
-                Console.WriteLine("2:Encanador");
-                Console.WriteLine("3:Eletricista");
-                Console.WriteLine("4:Marceneiro");
-                Console.WriteLine("5:Pedreiro de acabamento");
-                int escolha = int.Parse(Console.ReadLine());
-                if (escolha == 1)
-                {
-                    especialidade.Add(1, "Mecânico");                     
-                }
-                else if (escolha == 2)
-                {
-                    especialidade.Add(2, "Encanador");
-                }
-                else if (escolha == 3)
-                {
-                    especialidade.Add(3, "Eletricista");
-                }
-                else if (escolha == 4)
-                {
-                    especialidade.Add(4, "Marceneiro");
-                }
-                else if (escolha == 5)
-                {
-                    especialidade.Add(5, "Pedreiro de acabamento");
-                }
-                else
-                {
-                    loop = false;
-                }
-            }
-            Console.WriteLine("Escolha De Suas Especialidades Finalizada");
-            return especialidade;
         }
     }
 }

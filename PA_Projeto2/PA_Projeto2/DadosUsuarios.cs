@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PA_Projeto2
 {
-    class DadosUsuarios
+    class DadosUsuarios : ICrud
     {
         List<Usuario> usuarios;
 

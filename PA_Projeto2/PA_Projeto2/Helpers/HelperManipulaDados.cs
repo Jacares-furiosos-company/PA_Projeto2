@@ -10,6 +10,13 @@ namespace PA_Projeto2.Helpers
     {
         public static Usuario BuscaUsuario(string nomeUsuario)
         {
+           foreach(var item in Program.dadosUsuarios.Usuarios)
+            {
+                if(item.NomeUsuario == nomeUsuario)
+                {
+                    return item;
+                }
+            }
             return null;
         }
         public static bool VerificaUsuario(IEnumerable<Usuario> dadosusuarios ,string nomeUsuario, string senha)
