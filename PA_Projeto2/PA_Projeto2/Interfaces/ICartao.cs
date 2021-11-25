@@ -6,7 +6,7 @@ namespace PA_Projeto2.Interfaces
 {
     interface ICartao
     {
-        public string CartaoDeCredito
+        public string NumeroCartao
         { get; set; }
         int Cvv
         { get; set; }
@@ -15,7 +15,7 @@ namespace PA_Projeto2.Interfaces
 
         public void PagamentoCartao();
 
-        public void ValidarCartao();
+        public Boolean ValidarCartao();
 
         public Boolean CancelarCompra();
 

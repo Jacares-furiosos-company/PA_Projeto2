@@ -29,42 +29,66 @@ namespace PA_Projeto2.Helpers
         {
             bool loop = true;
             Dictionary<int, string> especialidade = new Dictionary<int, string>();
+            Console.ForegroundColor = ConsoleColor.Green;
+
+            Console.WriteLine("╔═════════════════ OPÇÕES DE ESPECIALIDADES ════════════════╗");
+            Console.WriteLine("║ DIGITE 1 PARA MECÂNICO                                    ║");
+            Console.WriteLine("║ DIGITE 2 PARA ENCANADOR                                   ║");
+            Console.WriteLine("║ DIGITE 3 PARA ELETRICISTA                                 ║");
+            Console.WriteLine("║ DIGITE 4 PARA MARCENEIRO                                  ║");
+            Console.WriteLine("║ DIGITE 5 PARA PEDREIRO DE ACABAMENTO                      ║");
+            Console.WriteLine("║ DIGITE 6 PARA SAIR                                        ║");
+            Console.WriteLine("╚═══════════════════════════════════════════════════════════╝");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("ATENÇÃO SÓ PODE ESCOLHER UMA ESPECIALIDADE !!!");
+            Console.ForegroundColor = ConsoleColor.White;
+
             while (loop == true)
             {
-                Console.WriteLine("Aperte Qualquer Tecla para sair");
-                Console.WriteLine("Escolha Suas Especialidade");
-                Console.WriteLine("1:Mecânico");
-                Console.WriteLine("2:Encanador");
-                Console.WriteLine("3:Eletricista");
-                Console.WriteLine("4:Marceneiro");
-                Console.WriteLine("5:Pedreiro de acabamento");
-                int escolha = int.Parse(Console.ReadLine());
-                if (escolha == 1)
+                try
                 {
-                    especialidade.Add(1, "Mecânico");
+
+                    var key = Console.ReadKey(true);
+
+                    if (key.Key == ConsoleKey.D1 | key.Key == ConsoleKey.NumPad1)
+                    {
+                        especialidade.Add(1, "Mecânico");
+                        Console.WriteLine("Especialidade Mecânico Foi Adicionado.");
+                    }
+                    else if (key.Key == ConsoleKey.D2 || key.Key == ConsoleKey.NumPad2)
+                    {
+                        especialidade.Add(2, "Encanador");
+                        Console.WriteLine("Especialidade Encanador Foi Adicionado.");
+                    }
+                    else if (key.Key == ConsoleKey.D3 || key.Key == ConsoleKey.NumPad3)
+                    {
+                        especialidade.Add(3, "Eletricista");
+                        Console.WriteLine("Especialidade Eletricista Foi Adicionado.");
+                    }
+                    else if (key.Key == ConsoleKey.D4 || key.Key == ConsoleKey.NumPad4)
+                    {
+                        especialidade.Add(4, "Marceneiro");
+                        Console.WriteLine("Especialidade Marceneiro Foi Adicionado.");
+                    }
+                    else if (key.Key == ConsoleKey.D5 || key.Key == ConsoleKey.NumPad5)
+                    {
+                        especialidade.Add(5, "Pedreiro de acabamento");
+                        Console.WriteLine("Especialidade Pedreiro de acabamento Foi Adicionado.");
+                    }
+                    else if (key.Key == ConsoleKey.D6 || key.Key == ConsoleKey.NumPad6)
+                    {
+                        loop = false;
+                    }else
+                    {
+                        Console.WriteLine("Opção invalida, Tente Novamente !");
+                    }
                 }
-                else if (escolha == 2)
+                catch (Exception ex)
                 {
-                    especialidade.Add(2, "Encanador");
+                    Console.WriteLine("Opção invalida, Tente Novamente !");
                 }
-                else if (escolha == 3)
-                {
-                    especialidade.Add(3, "Eletricista");
-                }
-                else if (escolha == 4)
-                {
-                    especialidade.Add(4, "Marceneiro");
-                }
-                else if (escolha == 5)
-                {
-                    especialidade.Add(5, "Pedreiro de acabamento");
-                }
-                else
-                {
-                    loop = false;
-                }
+               
             }
-            Console.WriteLine("Escolha De Suas Especialidades Finalizada");
             return especialidade;
         }
     }

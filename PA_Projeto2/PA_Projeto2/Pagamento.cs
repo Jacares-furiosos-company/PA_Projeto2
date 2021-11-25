@@ -10,24 +10,46 @@ namespace PA_Projeto2
     {
         public static void EscolherPagamento(Profissional profissional)
         {
-            Console.WriteLine($"Profissional Escolhido {profissional.NomeUsuario}");
-            Console.WriteLine("1:Cartão de Crédito");
-            Console.WriteLine("2:Boleto");
-            Console.WriteLine("Outra número para cancelar a compra");
-            int escolha = int.Parse(Console.ReadLine());
-            if(escolha == 1)
+            try
             {
-                PagamentoPorCartao();
-            }
-            else if(escolha == 2)
+                Console.WriteLine("═══════════════════════════════════════════════════");
+                Console.WriteLine($" Profissional Escolhido, {profissional.NomeUsuario}");
+                Console.WriteLine(" Digite 1 Para Pagamento com Cartão");
+                Console.WriteLine(" Digite 2 Para Pagamento no Boleto");
+                Console.WriteLine(" Enter Para Cancelar");
+                int escolha = int.Parse(Console.ReadLine());
+
+                if(escolha == 1)
+                {
+                    PagamentoPorCartao();
+                }
+                else if(escolha == 2)
+                {
+                    PagamentoPorBoleto();
+                }
+                else
+                {
+                    Cartao cartao = new Cartao();
+                    if(cartao.CancelarCompra() == true)
+                    {
+                        Console.WriteLine("═══════════════════════════════════════════════════");
+                        Console.WriteLine("Compra Cancelada");
+                        Console.WriteLine("Voltando para a tela principal ");
+                        Console.WriteLine("Aperte Enter !");
+                        string _ = Console.ReadLine();
+                        FluxoCliente.FluxoPrincipal();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Compra não Foi cancelada, e o Pedido sera Processado !");
+
+                    }
+                }
+
+            }catch (Exception ex)
             {
-                PagamentoPorBoleto();
-            }
-            else
-            {
-                Console.WriteLine("Compra Cancelada");
-                Console.WriteLine("Voltando para a tela principal ");
-                FluxoCliente.FluxoPrincipal();
+                Console.WriteLine("Opção Invalida !");
+
             }
             
         }
@@ -36,12 +58,40 @@ namespace PA_Projeto2
 
         private static void PagamentoPorCartao()
         {
-            Console.WriteLine("Pagamento Por Cartão Realizado");
+
+            Cartao cartao = new Cartao();
+            FluxoLogin fluxoLogin = new FluxoLogin();
+            try
+            {
+                if (cartao.ValidarCartao() == true)
+                {
+                    cartao.PagamentoCartao();
+                }
+                else
+                {
+                    fluxoLogin.Menu();
+                }
+
+            }catch (Exception ex)
+            {
+                Console.WriteLine("Opção Invalida !");
+            }
         }
 
         private static void PagamentoPorBoleto()
         {
-            Console.WriteLine("Pagamento Por Boleto Realizado");
+            Random randNum = new Random();
+
+            int cod_Pagamento1 = randNum.Next(0, 9);
+            int cod_Pagamento2 = randNum.Next(100000, 999999);
+            int cod_Pagamento3 = randNum.Next(100000, 999999);
+            int cod_Pagamento4 = randNum.Next(10, 99);
+
+            Console.WriteLine("═══════════════════════════════════════════════════");
+            Console.WriteLine("Realize o Pagamento através do Codigo de Barra abaixo!");
+            Console.WriteLine("Código de barra >> {0} || {1} || {2} || {3} << ", cod_Pagamento1, cod_Pagamento2, cod_Pagamento3, cod_Pagamento4);
+            Console.WriteLine("Digite Enter para Continuar");
+            string _ = Console.ReadLine();
         }
     }
 }

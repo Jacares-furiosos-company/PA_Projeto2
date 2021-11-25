@@ -8,6 +8,13 @@ namespace PA_Projeto2.Helpers
 {
     class HelperManipulaDados
     {
+        public static string nomeUsuario;
+
+        public static void NomeUsuario (string nome)
+        {
+            nomeUsuario = nome;
+        }
+
         public static Usuario BuscaUsuario(string nomeUsuario)
         {
            foreach(var item in Program.dadosUsuarios.Usuarios)
