@@ -77,10 +77,12 @@ namespace PA_Projeto2
         {
             try
             {
+                Console.WriteLine("═══════════════════════════════════════════════════");
                 Console.WriteLine("Dê uma nota de 1 a 5 para o Atendimento !");
                 int avalicao = int.Parse(Console.ReadLine());
                 profissional.VezesAvaliado = +1;
                 profissional.Estrelas = profissional.Estrelas + avalicao / profissional.VezesAvaliado;
+                Console.WriteLine("═══════════════════════════════════════════════════");
                 Console.WriteLine("Obrigado, Pela Nota !");
                 Console.WriteLine("Agora voce será Levado para Pagina Pincipal !");
                 Console.WriteLine("Aperte Enter !");
