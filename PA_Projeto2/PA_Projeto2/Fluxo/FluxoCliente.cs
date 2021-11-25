@@ -75,10 +75,26 @@ namespace PA_Projeto2
         }
         private static void avaliarServico(Profissional profissional)
         {
-            Console.WriteLine("Coloque um valor de 1 a 5 estrela para esse serviço");
-            int avalicao = int.Parse(Console.ReadLine());
-            profissional.VezesAvaliado = +1;
-            profissional.Estrelas = profissional.Estrelas + avalicao / profissional.VezesAvaliado;
+            try
+            {
+                Console.WriteLine("Dê uma nota de 1 a 5 para o Atendimento !");
+                int avalicao = int.Parse(Console.ReadLine());
+                profissional.VezesAvaliado = +1;
+                profissional.Estrelas = profissional.Estrelas + avalicao / profissional.VezesAvaliado;
+                Console.WriteLine("Obrigado, Pela Nota !");
+                Console.WriteLine("Agora voce será Levado para Pagina Pincipal !");
+                Console.WriteLine("Aperte Enter !");
+                string _ = Console.ReadLine();
+                Console.Clear();
+                FluxoLogin fluxoLogin = new FluxoLogin();
+                fluxoLogin.Menu();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Opção Invalida !");
+            }
+
         }
     }
 }
