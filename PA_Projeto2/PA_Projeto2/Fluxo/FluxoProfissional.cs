@@ -12,7 +12,7 @@ namespace PA_Projeto2
         {
             try
             {
-                Console.Write("═══════════════════════════════════════════════════");
+                Console.Write("═══════════════════════════════════════════════════\n");
                 Console.WriteLine("Outro número para sair ");
                 Console.WriteLine("Digite 1 para Serviços ");
                 Console.WriteLine("Digite 2 para Sair ");

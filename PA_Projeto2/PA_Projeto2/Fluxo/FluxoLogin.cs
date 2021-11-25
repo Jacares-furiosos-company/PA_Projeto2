@@ -81,7 +81,7 @@ namespace PA_Projeto2
                 if (verificao)
                 {
                     Console.Write("═══════════════════════════════════════════════════");
-                    Console.Write("\nLogin efetuado com Sucesso !");
+                    Console.Write("\nLogin efetuado com Sucesso !\n");
                     int tipoConta = HelperManipulaDados.verificaTipo(Program.dadosUsuarios.Usuarios, usuario);                  
                     if (tipoConta == 1)
                     {
