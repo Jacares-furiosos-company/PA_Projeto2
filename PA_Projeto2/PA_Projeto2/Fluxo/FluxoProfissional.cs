@@ -10,29 +10,47 @@ namespace PA_Projeto2
     {
         public static void FluxoPrincipal(string usuario)
         {
-            Console.WriteLine("Outro número para sair");
-            Console.WriteLine("1:Procurar Serviços");
-            int escolha = int.Parse(Console.ReadLine());
-            
-            if(escolha == 1)
+            try
             {
-                procurarServicos();
+                Console.Write("═══════════════════════════════════════════════════");
+                Console.WriteLine("Outro número para sair ");
+                Console.WriteLine("Digite 1 para Serviços ");
+                Console.WriteLine("Digite 2 para Sair ");
+                int escolha = int.Parse(Console.ReadLine());
+            
+                if(escolha == 1)
+                {
+                    procurarServicos();
+                }
+
+            }catch (Exception ex)
+            {
+                Console.WriteLine("Opção Invalida !");
             }
         }
 
         private static void procurarServicos()
         {
-            Console.WriteLine("Serviços Disponiveis");
-            foreach(var item in Program.dadosUsuarios.Usuarios)
+            Console.WriteLine("═══════════════════════════════════════════════════");
+            Console.WriteLine(" === Serviços Disponiveis === ");
+
+            foreach (var item in Program.dadosUsuarios.Usuarios)
             {
-                if(item.TipoConta == 1)
+                if (item.TipoConta == 1)
                 {
-                    Console.WriteLine($"Nome do usuário: {item.NomeUsuario}" );
+                    Console.WriteLine("═══════════════════════════════════════════════════");
+                    Console.WriteLine($"Nome do usuário: {item.NomeUsuario}");
                     Console.WriteLine($"Estrelas: {item.Estrelas}");
                 }
             }
+
+            Console.WriteLine("Muito Obrgiado !");
+            Console.WriteLine("Agora voce Será Redirecionado para a tela Princiapal");
+            Console.WriteLine("Aperte Enter !");
+            string _ = Console.ReadLine();
+            Console.Clear();
+            FluxoLogin fluxoLogin = new FluxoLogin();
+            fluxoLogin.Menu();
         }
-
-
     }
 }

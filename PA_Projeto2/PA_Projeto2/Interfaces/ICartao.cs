@@ -10,14 +10,14 @@ namespace PA_Projeto2.Interfaces
         { get; set; }
         int Cvv
         { get; set; }
-        int DataValidade
+        string DataValidade
         { get; set;}
 
         public void PagamentoCartao();
 
         public void ValidarCartao();
 
-        public void CancelarCompra();
+        public Boolean CancelarCompra();
 
     }
 }
